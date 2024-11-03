@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>manu te amo</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Animação de pulso */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+
+    /* Animação de opacidade para o texto */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Coração */
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: #e63946;
+      transform: rotate(-45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: pulse 1s infinite; /* Adiciona a animação de batimento */
+    }
+
+    /* Metade superior do coração */
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #e63946;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 100px;
+    }
+
+    /* Nome no centro do coração */
+    .heart span {
+      position: relative;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      transform: rotate(45deg);
+      animation: fadeIn 2s ease-in-out; /* Animação de entrada para o texto */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">
+    <span>naty te amo</span>
+  </div>
+</body>
+</html>
